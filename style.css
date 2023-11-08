@@ -11,18 +11,25 @@ html {
   margin: 0;
 }
 
-.header {
-  float: left;
-}
+.header {}
 
 .logo {
   float: left;
 }
 
 .navbar {
-  border-radius: 15px;
-  text-decoration: none;
-  text-align: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding: 50px;
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar a {
   font-size: 50px;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar a:hover {
+  color: white;
 }
