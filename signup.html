@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>LoLChampionGuide</title>
-  <link href="champions.css" rel="stylesheet" type="text/css">
+  <link href="signup.css" rel="stylesheet" type="text/css">
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
 </head>
-
 <body>
-  <header style="background-color: #0085FF" >
+  <header style="background-color: #0085FF">
     <a href="index.html" class="logo"><img src="img/logo.png" alt="LoLChampionGuide"></a>
     <div class="navbar">
       <a href="champions.html"><b>Champions</b></a>
@@ -20,7 +18,14 @@
     </div>
   </header>
 
- 
-</body>
+  <div class="signup-box">
+    <label for="username"><b>Username</b></label>
+    <input type="text" id="username" placeholder="Create Username" name="username" required>
+    <label for="password"><b>Password</b></label>
+    <input type="password" id="password" placeholder="Create Password" name="password" required>
+    <button id="signup-button" autocomplete="off">Sign Up</button>
+  </div>
 
+  <script src="signup.js"></script> <!-- Link to your JavaScript file -->
+</body>
 </html>
