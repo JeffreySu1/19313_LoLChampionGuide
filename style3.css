@@ -34,9 +34,18 @@ html {
 
 .forum {
   margin: 20px;
+  padding: 20px;
   position: absolute;
   top: 250px;
-  left: 250px;
+  left: 100px;
   text-align: center;
   background-color: #0085FF;
+}
+
+.column {
+  flex: 50%;
+}
+
+.row {
+  display: flex;
 }
