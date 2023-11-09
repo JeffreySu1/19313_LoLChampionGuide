@@ -5,7 +5,7 @@ $(document).ready(function () {
   function displayComments() {
     // GET request to fetch comments from the API
     $.ajax({
-      url: "https://retoolapi.dev/ARHXte/data",
+      url: "https://retoolapi.dev/z8RBOX/data",
       method: "GET", 
       success: function (response) {
         // Handle the comments
@@ -43,7 +43,7 @@ $(document).ready(function () {
 
     // Posting message to the API
     $.ajax({
-      url: "https://retoolapi.dev/ARHXte/data",
+      url: "https://retoolapi.dev/z8RBOX/data",
       method: "POST",
       data: JSON.stringify({ comment: userInput }), 
       contentType: "application/json",
