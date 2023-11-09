@@ -32,11 +32,11 @@ html {
   color: white;
 }
 
-.main {
+.forum {
   margin: 20px;
   position: absolute;
   top: 250px;
+  left: 250px;
   text-align: center;
-  font-size: 50px;
   background-color: #0085FF;
 }
