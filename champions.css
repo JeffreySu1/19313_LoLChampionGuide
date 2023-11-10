@@ -37,9 +37,10 @@ html {
   padding: 20px;
   position: absolute;
   top: 250px;
-  left: 100px;
+  left: 50px;
   text-align: center;
   background-color: #0085FF;
+  border-radius: 25px;
 }
 
 .column {
