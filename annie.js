@@ -1,7 +1,7 @@
 $(document).ready(function () {
   function displayComments() {
     $.ajax({
-      url: "https://retoolapi.dev/ARHXte/data",
+      url: "https://retoolapi.dev/COcivp/data",
       method: "GET",
       success: function (response) {
         const commentsContainer = $("#comments-container");
@@ -66,7 +66,7 @@ $(document).ready(function () {
     const userInput = $("#userInput").val();
 
     $.ajax({
-      url: "https://retoolapi.dev/ARHXte/data",
+      url: "https://retoolapi.dev/COcivp/data",
       method: "POST",
       data: JSON.stringify({ comment: userInput }),
       contentType: "application/json",
@@ -83,18 +83,30 @@ $(document).ready(function () {
   $("#submitRatingBtn").click(function () {
     const ratingInput = $("#ratingInput").val();
 
-    $.ajax({
-      url: "https://retoolapi.dev/vWUBoA/data",
-      method: "POST",
-      data: JSON.stringify({ rating: ratingInput }),
-      contentType: "application/json",
-      success: function () {
-        displayRatings();
-        $("#ratingInput").val("");
-      },
-      error: function (error) {
-        console.error("API Error:", error);
-      },
-    });
+    //Checks if number is between 1-5
+    if (isNumericBetween(ratingInput, 1, 5)) {
+
+      $.ajax({
+        url: "https://retoolapi.dev/vWUBoA/data",
+        method: "POST",
+        data: JSON.stringify({ rating: ratingInput }),
+        contentType: "application/json",
+        success: function () {
+          displayRatings();
+          $("#ratingInput").val("");
+        },
+        error: function (error) {
+          console.error("API Error:", error);
+        },
+      });
+    } else {
+      alert("Please enter a number between 1 and 5.")
+    }
   });
+
+  // Function to check if number is between 1-5 and checks if it's a number
+  function isNumericBetween(value, min, max) {
+    const numericValue = parseInt(value);
+    return !isNaN(numericValue) && numericValue >= min && numericValue <= max;
+  }
 });
