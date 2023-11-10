@@ -33,16 +33,15 @@ html {
 }
 
 .main {
-  margin: 20px;
+  margin-left: 38%;
   position: absolute;
   top: 250px;
   text-align: center;
   font-size: 20px;
   background-color: #0085FF;
+  border-radius: 25px;
 }
 
 .rating-section {
   background-color: #0085FF;
-
-
 }
