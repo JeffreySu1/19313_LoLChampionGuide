@@ -1,14 +1,9 @@
-// Adding and retriving comments from the API
-
 $(document).ready(function () {
-   // Function to display comments and total comment count
   function displayComments() {
-    // GET request to fetch comments from the API
     $.ajax({
       url: "https://retoolapi.dev/ARHXte/data",
-      method: "GET", 
+      method: "GET",
       success: function (response) {
-        // Handle the comments
         const commentsContainer = $("#comments-container");
         const commentCountElement = $("#comment-count");
         commentsContainer.empty();
@@ -20,7 +15,6 @@ $(document).ready(function () {
             }
           });
 
-          // Counts the total comments and totals it
           const totalComments = response.length - 1;
           commentCountElement.text("Total Comments: " + totalComments);
         } else {
@@ -34,23 +28,69 @@ $(document).ready(function () {
     });
   }
 
-  // Display comments when the page loads
-  displayComments();
+  function displayRatings() {
+    $.ajax({
+      url: "https://retoolapi.dev/vWUBoA/data",
+      method: "GET",
+      success: function (response) {
+        const ratingsContainer = $("#ratings-container");
+        const ratingCountElement = $("#rating-count");
+        ratingsContainer.empty();
 
-  // Waiting for button to be pressed
-  $("#submitBtn").click(function () {
+        if (Array.isArray(response) && response.length > 0) {
+          let totalRatings = 0;
+          response.forEach(function (rating) {
+            if (rating.rating) {
+              ratingsContainer.append("<p>Rating: " + rating.rating + "</p>");
+              totalRatings += parseInt(rating.rating);
+            }
+          });
+
+          const averageRating = totalRatings / response.length;
+          ratingCountElement.text("Average Rating: " + averageRating.toFixed(1));
+        } else {
+          ratingsContainer.append("<p>No ratings available.</p>");
+          ratingCountElement.text("Average Rating: No rating so far.");
+        }
+      },
+      error: function (error) {
+        console.error("API Error:", error);
+      },
+    });
+  }
+
+  displayComments();
+  displayRatings();
+
+  $("#submitCommentBtn").click(function () {
     const userInput = $("#userInput").val();
 
-    // Posting message to the API
     $.ajax({
       url: "https://retoolapi.dev/ARHXte/data",
       method: "POST",
-      data: JSON.stringify({ comment: userInput }), 
+      data: JSON.stringify({ comment: userInput }),
       contentType: "application/json",
       success: function () {
-        // Updates the comment section
         displayComments();
-        $("#userInput").val(""); 
+        $("#userInput").val("");
+      },
+      error: function (error) {
+        console.error("API Error:", error);
+      },
+    });
+  });
+
+  $("#submitRatingBtn").click(function () {
+    const ratingInput = $("#ratingInput").val();
+
+    $.ajax({
+      url: "https://retoolapi.dev/vWUBoA/data",
+      method: "POST",
+      data: JSON.stringify({ rating: ratingInput }),
+      contentType: "application/json",
+      success: function () {
+        displayRatings();
+        $("#ratingInput").val("");
       },
       error: function (error) {
         console.error("API Error:", error);
