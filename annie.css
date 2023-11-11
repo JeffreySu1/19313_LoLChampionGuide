@@ -1,37 +1,46 @@
+/* Style for the HTML page */
 html {
   height: 100%;
   width: 100%;
+  /* Background image */
   background-image: url("img/background.png");
   background-repeat: no-repeat;
   background-size: cover;
+  /* Uses the Roboto font for all the texts */
   font-family: 'Roboto', sans-serif;
 }
 
+/* Style for the body */
 .body {
   padding: 0;
   margin: 0;
 }
 
+/* Style for the logo */
 .logo {
   float: left;
 }
 
+/* Style for the navbar */
 .navbar {
   justify-content: space-evenly;
   padding: 50px;
   display: flex;
 }
 
+/* Style for the links in the navbar */
 .navbar a {
   font-size: 50px;
   text-decoration: none;
   color: black;
 }
 
+/* Makes the navbar texts turn white when hovering over it */
 .navbar a:hover {
   color: white;
 }
 
+/* Style for the main content */
 .main {
   margin-left: 38%;
   position: absolute;
@@ -40,8 +49,4 @@ html {
   font-size: 20px;
   background-color: #0085FF;
   border-radius: 25px;
-}
-
-.rating-section {
-  background-color: #0085FF;
 }

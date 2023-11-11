@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+  <!-- Website title -->
   <title>LoLChampionGuide</title>
+  <!-- Links to css -->
   <link href="missfortune.css" rel="stylesheet" type="text/css">
+  <!-- Access jQuery library -->
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
 </head>
+  
 <body>
   <header style="background-color: #0085FF">
+    <!-- Links to navigate around the website -->
     <a href="index.html" class="logo"><img src="img/logo.png" alt="LoLChampionGuide"></a>
     <div class="navbar">
       <a href="champions.html"><b>Champions</b></a>
@@ -18,7 +24,9 @@
     </div>
   </header>
 
+  <!-- Comment and rating components -->
   <div class="main">
+    <!-- Rating component -->
     <div id="rating-section">
       <h2>Ratings</h2>
       <div id="rating-count"><b>Total Ratings: 0</b></div>
@@ -27,10 +35,12 @@
       <div id="rating-container"></div>
     </div>
 
+    <!-- Comment component -->
     <div id="comment-count"><b>Total Comments: 0</b></div>
       <input type="text" id="userInput"> 
       <input type="button" value="Submit" id="submitCommentBtn"> 
       <div id="comments-container"></div> 
+      <!-- Links to javascript -->
       <script src="missfortune.js"></script> 
   </div>
 

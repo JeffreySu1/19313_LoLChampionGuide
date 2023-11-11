@@ -27,4 +27,3 @@ $('#login-button').on('click', function() {
     }
   });
 });
-
